@@ -8,14 +8,11 @@ function Parent() {
   const [handleCount2, sethandleCount2] = useState(0);
 
   const fn1 = React.useCallback(() => {
-    console.log("first fn");
     sethandleCount1(handleCount1 + 1);
   }, [handleCount1]);
   const fn2 = React.useCallback(() => {
-    console.log("fn2");
     sethandleCount2(handleCount2 + 1);
   }, [handleCount2]);
-  console.log("parent");
 
   return (
     <div>
