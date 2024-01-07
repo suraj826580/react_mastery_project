@@ -1,11 +1,32 @@
-import React from "react";
+import React, { Profiler } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+function onRender(
+  id,
+  phase,
+  actualDuration,
+  baseDuration,
+  startTime,
+  commitTime
+) {
+  // Aggregate or log render timings...
+  console.log(id);
+  console.log(phase);
+  console.log(actualDuration);
+  console.log(baseDuration);
+  console.log(startTime);
+  console.log(commitTime);
+}
+
+root.render(
+  <Profiler id="App" onRender={onRender}>
+    <App />
+  </Profiler>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

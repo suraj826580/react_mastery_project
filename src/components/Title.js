@@ -1,8 +1,8 @@
 import React from "react";
 
-function Title() {
-  console.log("Rendering Title");
-  return <h2>Use Callback</h2>;
+function Title({ children }) {
+  console.log("Title");
+  return <div>{children}</div>;
 }
 
 export default React.memo(Title);

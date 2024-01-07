@@ -1,8 +1,11 @@
 import React from "react";
 
-function Button({ handleClick, children }) {
-  console.log("Rendering Button - ", children);
-  return <button onClick={handleClick}>{children}</button>;
+function Button({ no, handleCount }) {
+  return (
+    <div>
+      <button onClick={handleCount}>Add Count {no}</button>
+    </div>
+  );
 }
 
 export default React.memo(Button);
